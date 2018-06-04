@@ -17,6 +17,10 @@ public abstract class AbstractDSLDao {
           return new StringPath(PathMetadataFactory.forProperty(parent, "ROWID"));
     }
 
+    public static void testQueryDslIssue(){
+        QTag.tag.tagcode.asc();
+    }
+
     public void setValidator(Validator validator) {
         // Unwrap to the native Validator with forExecutables support
         if (validator instanceof LocalValidatorFactoryBean) {
