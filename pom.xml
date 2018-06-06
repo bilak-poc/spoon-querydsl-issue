@@ -18,6 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <spoon.version>6.3.0-SNAPSHOT</spoon.version>
         <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
         <querydsl.version>3.6.9</querydsl.version>
     </properties>
@@ -25,26 +26,16 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.mysema.querydsl</groupId>
-                <artifactId>querydsl-sql</artifactId>
-                <version>${querydsl.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>com.google.code.findbugs</groupId>
-                        <artifactId>jsr305</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.servicemix.bundles</groupId>
-                        <artifactId>org.apache.servicemix.bundles.javax-inject</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>fr.inria.gforge.spoon</groupId>
+                <artifactId>spoon-core</artifactId>
+                <version>${spoon.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
