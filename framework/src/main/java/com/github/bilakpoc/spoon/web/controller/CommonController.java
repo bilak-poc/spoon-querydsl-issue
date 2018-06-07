@@ -2,6 +2,8 @@ package com.github.bilakpoc.spoon.web.controller;
 
 import java.time.LocalDate;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,12 +25,12 @@ public class CommonController {
         this.dateService = dateService;
     }
 
-    @RequestMapping("/negations")
+    @GetMapping("/negations")
     public Boolean negate(@RequestParam Boolean value) {
         return booleanService.negate(value);
     }
 
-    @RequestMapping("/dates")
+    @PostMapping("/dates")
     public LocalDate addDay(@RequestParam LocalDate date) {
         return dateService.addDay(date);
     }
